@@ -76,6 +76,8 @@ export default class Game extends React.Component {
           }
           this.setState({tiles})
         }
+        var tiles = this.addRandomTile()
+        this.setState({tiles})
         break;
       case 38: //up
         console.log("up key pressed");
@@ -92,6 +94,8 @@ export default class Game extends React.Component {
           }
           this.setState({tiles})
         }
+        var tiles = this.addRandomTile()
+        this.setState({tiles})
         break;
       case 39: //right
         console.log("right key pressed");
@@ -109,6 +113,8 @@ export default class Game extends React.Component {
           }
           this.setState({tiles})
         }
+        var tiles = this.addRandomTile()
+        this.setState({tiles})
         break;
       case 40: //down
         console.log("down key pressed");
@@ -126,6 +132,8 @@ export default class Game extends React.Component {
           }
           this.setState({tiles})
         }
+        var tiles = this.addRandomTile()
+        this.setState({tiles})
         break;
       default:
         return;
