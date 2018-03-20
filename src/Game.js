@@ -6,6 +6,7 @@ export default class Game extends React.Component {
     super(props);
     this.state = {
       tiles: Array(16).fill(null),
+      score: 0,
     };
   }
   addRandomTile() {
@@ -30,6 +31,8 @@ export default class Game extends React.Component {
   merge(sequence) {
     for(var i = 0; i < sequence.length; i++) {
       if(sequence[i] === sequence[i+1]) {
+        var result = this.state.score + sequence[i];
+        this.setState({score: result});
         sequence[i] *= 2;
         sequence[i+1] = null;
         var j = i+1;
@@ -147,7 +150,10 @@ export default class Game extends React.Component {
    }
   render() {
     return(
-      <Board tiles={this.state.tiles} />
+      <div>
+        <div className="score">Score: {this.state.score}</div>
+        <Board tiles={this.state.tiles} />
+      </div>
     );
   }
 }
