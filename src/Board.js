@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Square from './Square';
 import { Grid, Row, Col } from 'react-material-responsive-grid';
 
 export default class Board extends Component {

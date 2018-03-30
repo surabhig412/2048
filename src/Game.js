@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Board from './Board';
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
@@ -164,7 +164,7 @@ export default class Game extends React.Component {
     return(
       <div>
         <MuiThemeProvider>
-          <Paper style={style} zDepth={10}>
+          <Paper style={style} zDepth={5}>
             <AppBar title="2048" showMenuIconButton={false}></AppBar>
             <div className="score">Score: {this.state.score}</div>
             <Board tiles={this.state.tiles} />
