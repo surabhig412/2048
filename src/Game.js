@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
 import Board from './Board';
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import AppBar from "material-ui/AppBar";
+import Paper from "material-ui/Paper";
+
+const style = {
+  textAlign: "center",
+  maxWidth: "450px",
+  padding: 10,
+  display: "block",
+  marginLeft: "auto",
+  marginRight: "auto",
+};
 
 export default class Game extends React.Component {
   constructor(props) {
@@ -151,8 +163,13 @@ export default class Game extends React.Component {
   render() {
     return(
       <div>
-        <div className="score">Score: {this.state.score}</div>
-        <Board tiles={this.state.tiles} />
+        <MuiThemeProvider>
+          <Paper style={style} zDepth={10}>
+            <AppBar title="2048" showMenuIconButton={false}></AppBar>
+            <div className="score">Score: {this.state.score}</div>
+            <Board tiles={this.state.tiles} />
+          </Paper>
+        </MuiThemeProvider>
       </div>
     );
   }
